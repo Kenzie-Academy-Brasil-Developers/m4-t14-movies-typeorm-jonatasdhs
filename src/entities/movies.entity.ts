@@ -1,16 +1,16 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity('movies')
 
-export class Movies {
+export class Movie {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column({ length: '50', unique: true})
     name: string
 
-    @Column({nullable: true})
-    description: string
+    @Column({type: 'text', nullable: true})
+    description?: string | null | undefined
 
     @Column()
     duration: number
