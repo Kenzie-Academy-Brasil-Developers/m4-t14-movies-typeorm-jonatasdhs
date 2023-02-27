@@ -62,7 +62,6 @@ describe('PATCH /movies', () => {
     const response = await supertest(app)
       .patch(updateUrl)
       .send(updateRouteMock.moviePartial);
-    console.log(response.body, updateUrl, updateRouteMock.moviePartial);
     
     const expectResults = {
       status: 200,

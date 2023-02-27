@@ -4,7 +4,6 @@ import { AppDataSource } from "../data-source";
 import { Movie } from "../entities";
 import { AppError } from "../error";
 import { iMovieRepo } from "../interfaces";
-import { listMoviesService } from "../services";
 
 export const ensureMovieExistsMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const id: number = parseInt(req.params.id)
