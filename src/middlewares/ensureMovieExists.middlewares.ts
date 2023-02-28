@@ -22,11 +22,7 @@ export const verifyMovieAlreadyExistsMiddleware = async (req: Request, res: Resp
    
     if(name) {
         const movieRepository: iMovieRepo = AppDataSource.getRepository(Movie)
-        const movie = await movieRepository.exist({
-            where: {
-                name
-            }
-        })
+        const movie = await movieRepository.findOne({where: {name}})
         
         if(movie) throw new AppError("Movie already exists.", 409)
     }
